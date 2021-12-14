@@ -1,6 +1,7 @@
 import React from 'react';
+import DateTime from './DateTime';
 
-export default function DateTimePretty (DateTime) {
+export default function withDateTimePretty (Component) {
     return class extends React.Component {
         render() {
             const dateNow = new Date();
@@ -19,7 +20,9 @@ export default function DateTimePretty (DateTime) {
             componentDate = `${Math.ceil(range/ (24 * 60 * 60 * 1000))} дней назад`;
             }
 
-            return <DateTime date={componentDate}/>  
+            return <Component date={componentDate}/>  
         }  
     }
 }
+
+export const UpgradedDate = withDateTimePretty(DateTime);
