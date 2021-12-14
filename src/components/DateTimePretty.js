@@ -1,7 +1,7 @@
 import React from 'react';
 import DateTime from './DateTime';
 
-export default function withDateTimePretty (Component) {
+function withDateTimePretty (Component) {
     return class extends React.Component {
         render() {
             const dateNow = new Date();
